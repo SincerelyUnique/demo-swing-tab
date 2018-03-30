@@ -1,5 +1,6 @@
 package com.example.utils;
 
+import java.io.File;
 import java.net.URL;
 import java.util.HashMap;
 
@@ -32,8 +33,9 @@ public abstract class RawCacheRoot<T> {
 		}else {
 			try {
 				String clazzPath = this.getClass().getResource("/").getPath();
-				String path = clazzPath + relativePath;
-				ic = getResource(path, baseClass);
+				String path = "file://"+ clazzPath + relativePath;
+				URL url = new URL(path);
+				ic = getResource(url);
 				rawCache.put(key, ic);
 			} catch (Exception e) {
 				System.out.println("取本地磁盘资源文件出错,path="+key+","+e.getMessage());
@@ -47,8 +49,7 @@ public abstract class RawCacheRoot<T> {
 	 * 本地资源获取方法实现.
 	 *
 	 * @param relativePath 相对路径
-	 * @param baseClass 基准类
 	 * @return the resource
 	 */
-	protected abstract T getResource(String relativePath,Class baseClass);
+	protected abstract T getResource(URL relativePath);
 }

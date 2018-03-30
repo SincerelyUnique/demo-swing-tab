@@ -4,6 +4,8 @@ import org.jb2011.ninepatch4j.NinePatch;
 import com.example.utils.NPHelper;
 import com.example.utils.RawCacheRoot;
 
+import java.net.URL;
+
 public class NPIconFactory extends RawCacheRoot<NinePatch> {
 
 	public final static String IMGS_ROOT="popup/imgs/np";
@@ -17,8 +19,8 @@ public class NPIconFactory extends RawCacheRoot<NinePatch> {
 	}
 
 	@Override
-	protected NinePatch getResource(String relativePath, Class baseClass) {
-		return NPHelper.createNinePatch(baseClass.getResource(relativePath), false);
+	protected NinePatch getResource(URL url) {
+		return NPHelper.createNinePatch(url, false);
 	}
 
 	public NinePatch getRaw(String relativePath) {

@@ -34,20 +34,20 @@ public class MainFrame extends JFrame {
 		JTabbedPane tbs = new JTabbedPane();
 		
 		tbs.add(new com.example.popup.Demo(), "Cool tooltip");
-		/*tbs.add(new com.example.fixtip.Demo(), "Cool fix tip");
+		tbs.add(new com.example.fixtip.Demo(), "Cool fix tip");
 		tbs.add(new com.example.photoframe.Demo(), "Photo frame");
 		tbs.add(new JPanel(), "Cool border demo");
 		tbs.add(new JPanel(), "仿手机短信内容查看");
 		tbs.add(new JPanel(), "Cool 名片");
-		tbs.add(new com.example.toast.Demo(), "Toast");*/
+		tbs.add(new com.example.toast.Demo(), "Toast");
 		
 		tbs.setToolTipTextAt(0, "Cool tooltip");
-		/*tbs.setToolTipTextAt(1, "Cool fix tip");
+		tbs.setToolTipTextAt(1, "Cool fix tip");
 		tbs.setToolTipTextAt(2, "Photo frame");
 		tbs.setToolTipTextAt(3, "Cool border demo");
 		tbs.setToolTipTextAt(4, "仿手机短信内容查看");
 		tbs.setToolTipTextAt(5, "Cool 名片");
-		tbs.setToolTipTextAt(3, "Toast");*/
+		tbs.setToolTipTextAt(3, "Toast");
 		
 		return tbs;
 	}

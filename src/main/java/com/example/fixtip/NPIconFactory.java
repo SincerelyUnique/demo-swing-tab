@@ -8,7 +8,8 @@ import java.net.URL;
 
 public class NPIconFactory extends RawCacheRoot<NinePatch> {
 
-	public final static String IMGS_ROOT="fixtip/imgs/np";
+	private final static String IMAGE_PATH = "fixtip/imgs/np";
+	private final static String IMAGE_NAME9 = "/fixtip_bg.9.png";
 
 	private static NPIconFactory instance = null;
 
@@ -23,16 +24,11 @@ public class NPIconFactory extends RawCacheRoot<NinePatch> {
 		return NPHelper.createNinePatch(url, false);
 	}
 
-	public NinePatch getRaw(String relativePath) {
-		return  getRaw(relativePath,this.getClass());
-	}
-
 	public NinePatch getFixTipBg() {
-		return getRaw(getFixTipBg_PATH());
+		return getRaw( IMAGE_PATH + IMAGE_NAME9 );
 	}
 
-	public String getFixTipBg_PATH()
-	{
-		return "fixtip/imgs/np/fixtip_bg.9.png";
+	public NinePatch getRaw(String path) {
+		return  getRaw(path, IMAGE_NAME9, this.getClass());
 	}
 }

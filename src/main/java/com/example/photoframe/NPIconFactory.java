@@ -8,7 +8,8 @@ import java.net.URL;
 
 public class NPIconFactory extends RawCacheRoot<NinePatch> {
 
-	public final static String IMGS_ROOT="photoframe/imgs/np";
+	private final static String IMAGE_PATH = "/photoframe/imgs/np";
+	private final static String IMAGE_NAME = "/photoframe_bg2.9.png";
 
 	private static NPIconFactory instance = null;
 
@@ -23,17 +24,17 @@ public class NPIconFactory extends RawCacheRoot<NinePatch> {
 		return NPHelper.createNinePatch(url, false);
 	}
 
-	public NinePatch getRaw(String relativePath) {
-		return  getRaw(relativePath,this.getClass());
-	}
-
 	public NinePatch getPhotoframeBg() {
-		return getRaw(getPhotoframeBg_PATH());
+		return getRaw(IMAGE_PATH+IMAGE_NAME);
 	}
 
-	public String getPhotoframeBg_PATH()
-	{
-		//return IMGS_ROOT+"/photoframe_bg.9.png";
-		return IMGS_ROOT+"/photoframe_bg2.9.png";
+	public NinePatch getRaw(String path) {
+		return getRaw(path,IMAGE_NAME,this.getClass());
+	}
+
+	public static void main(String[] args) {
+		NPIconFactory npi = new NPIconFactory();
+		System.out.println(npi.getClass().getName());
+		System.out.println(npi.getClass().getResource("/").getPath());
 	}
 }

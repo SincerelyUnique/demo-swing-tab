@@ -8,7 +8,10 @@ import java.net.URL;
 
 public class NPIconFactory extends RawCacheRoot<NinePatch> {
 
-	public final static String IMGS_ROOT="popup/imgs/np";
+	private final static String IMAGE_PATH = "popup/imgs/np";
+	private final static String IMAGE_NAME9 = "/shadow_bg_popup.9.png";
+	private final static String IMAGE_NAME29 = "/shadow_bg_tooltip2.9.png";
+	private final static String IMAGE_NAME19 = "/scroll_pane_bg1.9.png";
 
 	private static NPIconFactory instance = null;
 
@@ -23,19 +26,19 @@ public class NPIconFactory extends RawCacheRoot<NinePatch> {
 		return NPHelper.createNinePatch(url, false);
 	}
 
-	public NinePatch getRaw(String relativePath) {
-		return  getRaw(relativePath,this.getClass());
-	}
-
 	public NinePatch getPopupBg() {
-		return getRaw(IMGS_ROOT+"/shadow_bg_popup.9.png");
+		return getRaw(IMAGE_PATH + IMAGE_NAME9 , IMAGE_NAME9);
 	}
 
 	public NinePatch getTooltipBg() {
-		return getRaw(IMGS_ROOT+"/shadow_bg_tooltip2.9.png");
+		return getRaw(IMAGE_PATH + IMAGE_NAME29 , IMAGE_NAME29 );
 	}
 
 	public NinePatch getScrollPaneBorderBg() {
-		return getRaw(IMGS_ROOT+"/scroll_pane_bg1.9.png");
+		return getRaw( IMAGE_PATH + IMAGE_NAME19 , null );
+	}
+
+	public NinePatch getRaw(String path , String imageName) {
+		return  getRaw(path, imageName, this.getClass());
 	}
 }

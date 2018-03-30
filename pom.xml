@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
   <artifactId>demo</artifactId>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>demo Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -16,39 +16,39 @@
     </dependency>
 
     <dependency>
-      <groupId>com.beautyeye.cloud</groupId>  <!--自定义-->
-      <artifactId>cloud</artifactId>    <!--自定义-->
+      <groupId>com.beautyeye</groupId>  <!--自定义-->
+      <artifactId>beautyeye</artifactId>    <!--自定义-->
       <version>1.0</version> <!--自定义-->
-      <scope>system</scope><!--system，类似provided，需要显式提供依赖的jar以后，Maven就不会在Repository中查找它-->
-      <systemPath>${basedir}/src/main/webapp/lib/beautyeye_lnf.jar</systemPath> <!--项目根目录下的lib文件夹下-->
+      <!--<scope>system</scope>--><!--system，类似provided，需要显式提供依赖的jar以后，Maven就不会在Repository中查找它-->
+      <!--<systemPath>${basedir}/src/main/webapp/lib/beautyeye_lnf.jar</systemPath>--> <!--项目根目录下的lib文件夹下-->
     </dependency>
 
     <dependency>
-      <groupId>com.draw9patch4j.cloud</groupId>  <!--自定义-->
+      <groupId>com.draw9patch4j</groupId>  <!--自定义-->
       <artifactId>draw9patch4j</artifactId>    <!--自定义-->
       <version>1.0</version> <!--自定义-->
-      <scope>system</scope><!--system，类似provided，需要显式提供依赖的jar以后，Maven就不会在Repository中查找它-->
-      <systemPath>${basedir}/src/main/webapp/lib/Draw9Patch4j_alone.jar</systemPath> <!--项目根目录下的lib文件夹下-->
+      <!--<scope>system</scope>--><!--system，类似provided，需要显式提供依赖的jar以后，Maven就不会在Repository中查找它-->
+      <!--<systemPath>${basedir}/src/main/webapp/lib/Draw9Patch4j_alone.jar</systemPath>--> <!--项目根目录下的lib文件夹下-->
     </dependency>
 
     <dependency>
-      <groupId>com.ninepatch4j.cloud</groupId>  <!--自定义-->
+      <groupId>com.ninepatch4j</groupId>  <!--自定义-->
       <artifactId>ninepatch4j</artifactId>    <!--自定义-->
       <version>1.0</version> <!--自定义-->
-      <scope>system</scope><!--system，类似provided，需要显式提供依赖的jar以后，Maven就不会在Repository中查找它-->
-      <systemPath>${basedir}/src/main/webapp/lib/ninepatch4j.jar</systemPath> <!--项目根目录下的lib文件夹下-->
+      <!--<scope>system</scope>--><!--system，类似provided，需要显式提供依赖的jar以后，Maven就不会在Repository中查找它-->
+      <!--<systemPath>${basedir}/src/main/webapp/lib/ninepatch4j.jar</systemPath>--> <!--项目根目录下的lib文件夹下-->
     </dependency>
 
     <dependency>
-      <groupId>com.swing-worker.cloud</groupId>  <!--自定义-->
-      <artifactId>swing-worker</artifactId>    <!--自定义-->
+      <groupId>com.swing-worker</groupId>  <!--自定义-->
+      <artifactId>com.swing-worker</artifactId>    <!--自定义-->
       <version>1.0</version> <!--自定义-->
-      <scope>system</scope><!--system，类似provided，需要显式提供依赖的jar以后，Maven就不会在Repository中查找它-->
-      <systemPath>${basedir}/src/main/webapp/lib/swing-worker-1.2(1.6-).jar</systemPath> <!--项目根目录下的lib文件夹下-->
+      <!--<scope>system</scope>--><!--system，类似provided，需要显式提供依赖的jar以后，Maven就不会在Repository中查找它-->
+      <!--<systemPath>${basedir}/src/main/webapp/lib/swing-worker-1.2(1.6-).jar</systemPath>--> <!--项目根目录下的lib文件夹下-->
     </dependency>
   </dependencies>
   <build>
-    <finalName>demo</finalName>
+    <finalName>demo-swing-ui</finalName>
 
     <plugins>
       <plugin>
@@ -75,7 +75,7 @@
 
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>com.helper.execute.JTabbedPaneDemo</mainClass>
+                  <mainClass>com.example.Launch</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -93,4 +93,13 @@
       </plugin>
     </plugins>
   </build>
+
+  <repositories>
+    <!--other repositories if any-->
+    <repository>
+      <id>project.local</id>
+      <name>project</name>
+      <url>file:${project.basedir}/repo</url>
+    </repository>
+  </repositories>
 </project>

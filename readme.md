@@ -1,4 +1,4 @@
-Java Swing Demo
+## Java Swing Demo
 
 >这个demo主要是在JackJiang2011代码基础上修改成maven项目，并做一些相关加工处理，使其能够称为工作中一些小工具的UI框架。
 

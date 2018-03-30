@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class NPIconFactory extends RawCacheRoot<NinePatch> {
 
-	private final static String IMAGE_PATH = "toast/imgs/np";
+	private final static String IMAGE_PATH = "/toast/imgs/np";
 	private final static String IMAGE_NAME = "/toast_bg.9.png";
 
 	private static NPIconFactory instance = null;

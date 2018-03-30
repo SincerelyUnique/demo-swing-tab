@@ -15,6 +15,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import com.example.utils.PropertyUtils;
 import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
 
 public class Demo extends JPanel {
@@ -69,7 +70,7 @@ public class Demo extends JPanel {
 		// 初始化主界面
 		this.add(btnPane, BorderLayout.SOUTH);
 		this.add(new JScrollPane(txtMsg), BorderLayout.CENTER);
-		this.add(new JLabel("单击Fixtip组件即可退出显示哦."), BorderLayout.NORTH);
+		this.add(new JLabel(PropertyUtils.getValue("fixtip.demo.label",PropertyUtils.SYSTEM_PATH)), BorderLayout.NORTH);
 		this.setBorder(BorderFactory.createEmptyBorder(80,20,20,20));
 	}
 

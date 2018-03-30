@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class NPIconFactory extends RawCacheRoot<NinePatch> {
 
-	private final static String IMAGE_PATH = "popup/imgs/np";
+	private final static String IMAGE_PATH = "/popup/imgs/np";
 	private final static String IMAGE_NAME9 = "/shadow_bg_popup.9.png";
 	private final static String IMAGE_NAME29 = "/shadow_bg_tooltip2.9.png";
 	private final static String IMAGE_NAME19 = "/scroll_pane_bg1.9.png";

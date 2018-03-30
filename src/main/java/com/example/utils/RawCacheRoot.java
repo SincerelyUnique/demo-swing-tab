@@ -34,12 +34,17 @@ public abstract class RawCacheRoot<T> {
 			try {
 				// jar包中运行，URL直接使用相对路径；如果url为空，则取绝对路径
 				URL url = baseClass.getResource(path);
+				System.out.println("===before===");
+				System.out.println("path="+path);
+				System.out.println("name="+name);
+				System.out.println("url="+url);
 				if ( null==url ){
 					String clazzPath = this.getClass().getResource("/").getPath();
 					path = "file://"+ clazzPath + path;
 					url = new URL(path);
 				}
 
+				System.out.println("===after===");
 				System.out.println("path="+path);
 				System.out.println("name="+name);
 				System.out.println("url="+url.getPath());
@@ -47,7 +52,9 @@ public abstract class RawCacheRoot<T> {
 				ic = getResource(url);
 				rawCache.put(key, ic);
 			} catch (Exception e) {
-				System.out.println("取本地磁盘资源文件出错,path="+key+","+e.getMessage());
+				System.out.println(PropertyUtils.
+						getValue("utils.rawCacheRoot.error",
+								PropertyUtils.SYSTEM_PATH)+key+","+e.getMessage());
 				e.printStackTrace();
 			}
 		}

@@ -16,35 +16,41 @@
     </dependency>
 
     <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>4.3.9.RELEASE</version>
+    </dependency>
+
+    <dependency>
       <groupId>com.beautyeye</groupId>  <!--自定义-->
       <artifactId>beautyeye</artifactId>    <!--自定义-->
       <version>1.0</version> <!--自定义-->
-      <!--<scope>system</scope>--><!--system，类似provided，需要显式提供依赖的jar以后，Maven就不会在Repository中查找它-->
+      <!--<scope>system</scope>-->
       <!--<systemPath>${basedir}/src/main/webapp/lib/beautyeye_lnf.jar</systemPath>--> <!--项目根目录下的lib文件夹下-->
     </dependency>
 
     <dependency>
-      <groupId>com.draw9patch4j</groupId>  <!--自定义-->
-      <artifactId>draw9patch4j</artifactId>    <!--自定义-->
-      <version>1.0</version> <!--自定义-->
-      <!--<scope>system</scope>--><!--system，类似provided，需要显式提供依赖的jar以后，Maven就不会在Repository中查找它-->
+      <groupId>com.draw9patch4j</groupId>
+      <artifactId>draw9patch4j</artifactId>
+      <version>1.0</version>
+      <!--<scope>system</scope>-->
       <!--<systemPath>${basedir}/src/main/webapp/lib/Draw9Patch4j_alone.jar</systemPath>--> <!--项目根目录下的lib文件夹下-->
     </dependency>
 
     <dependency>
-      <groupId>com.ninepatch4j</groupId>  <!--自定义-->
-      <artifactId>ninepatch4j</artifactId>    <!--自定义-->
-      <version>1.0</version> <!--自定义-->
-      <!--<scope>system</scope>--><!--system，类似provided，需要显式提供依赖的jar以后，Maven就不会在Repository中查找它-->
-      <!--<systemPath>${basedir}/src/main/webapp/lib/ninepatch4j.jar</systemPath>--> <!--项目根目录下的lib文件夹下-->
+      <groupId>com.ninepatch4j</groupId>
+      <artifactId>ninepatch4j</artifactId>
+      <version>1.0</version>
+      <!--<scope>system</scope>-->
+      <!--<systemPath>${basedir}/src/main/webapp/lib/ninepatch4j.jar</systemPath>-->
     </dependency>
 
     <dependency>
-      <groupId>com.swing-worker</groupId>  <!--自定义-->
-      <artifactId>com.swing-worker</artifactId>    <!--自定义-->
-      <version>1.0</version> <!--自定义-->
-      <!--<scope>system</scope>--><!--system，类似provided，需要显式提供依赖的jar以后，Maven就不会在Repository中查找它-->
-      <!--<systemPath>${basedir}/src/main/webapp/lib/swing-worker-1.2(1.6-).jar</systemPath>--> <!--项目根目录下的lib文件夹下-->
+      <groupId>com.swing-worker</groupId>
+      <artifactId>com.swing-worker</artifactId>
+      <version>1.0</version>
+      <!--<scope>system</scope>-->
+      <!--<systemPath>${basedir}/src/main/webapp/lib/swing-worker-1.2(1.6-).jar</systemPath>-->
     </dependency>
   </dependencies>
   <build>

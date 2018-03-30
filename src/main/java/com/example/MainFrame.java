@@ -1,5 +1,7 @@
 package com.example;
 
+import com.example.utils.PropertyUtils;
+
 import java.awt.BorderLayout;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
@@ -19,7 +21,8 @@ public class MainFrame extends JFrame {
 	private JPanel mainPane = new JPanel(new BorderLayout());
 	
 	public MainFrame(String path) throws HeadlessException {
-		super ("Swing9patch Project - 欢迎加入Swing交流群：259448663");
+		super (PropertyUtils.
+				getValue("title",PropertyUtils.SYSTEM_PATH));
 		initGUI();
 		setSize(900, 680);
 	}
@@ -37,15 +40,18 @@ public class MainFrame extends JFrame {
 		tbs.add(new com.example.fixtip.Demo(), "Cool fix tip");
 		tbs.add(new com.example.photoframe.Demo(), "Photo frame");
 		tbs.add(new JPanel(), "Cool border demo");
-		tbs.add(new JPanel(), "仿手机短信内容查看");
-		tbs.add(new JPanel(), "Cool 名片");
+		tbs.add(new JPanel(), PropertyUtils.
+				getValue("mainFrame.panel.label1",PropertyUtils.SYSTEM_PATH));
+		tbs.add(new JPanel(), PropertyUtils.
+				getValue("mainFrame.panel.label2",PropertyUtils.SYSTEM_PATH));
 		tbs.add(new com.example.toast.Demo(), "Toast");
 		
 		tbs.setToolTipTextAt(0, "Cool tooltip");
 		tbs.setToolTipTextAt(1, "Cool fix tip");
 		tbs.setToolTipTextAt(2, "Photo frame");
 		tbs.setToolTipTextAt(3, "Cool border demo");
-		tbs.setToolTipTextAt(4, "仿手机短信内容查看");
+		tbs.setToolTipTextAt(4, PropertyUtils.
+				getValue("mainFrame.panel.label1",PropertyUtils.SYSTEM_PATH));
 		tbs.setToolTipTextAt(5, "Cool 名片");
 		tbs.setToolTipTextAt(3, "Toast");
 		
@@ -78,15 +84,17 @@ public class MainFrame extends JFrame {
 		fileMenu2.add(new JMenuItem("Menu item 7"));
 		fileMenu2.add(new JMenuItem("Menu item 8"));
 
-		JMenu aboutMenu = new JMenu("关于");
-		JMenuItem aboutMenuItem = new JMenuItem("关于本工程");
+		JMenu aboutMenu = new JMenu(PropertyUtils.
+				getValue("mainFrame.about",PropertyUtils.SYSTEM_PATH));
+		JMenuItem aboutMenuItem = new JMenuItem(PropertyUtils.
+				getValue("mainFrame.aboutProject",PropertyUtils.SYSTEM_PATH));
 		aboutMenuItem.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e)
 			{
 				JOptionPane.showMessageDialog(rootPane, "Swing9patch" +
-						"\n - 本工程是一组利用BeautyEye工程相同基础技术实现的Swing组件或UI效果." +
-						"\n - 工程内的UI组件或效果都可方便地抽取出来用于您的项目." +
-						"\n - 本工程是BeautyEye的衍生工程，开发于2012年底，作是Jack Jiang(jb2011@163.com)." +
+						"\n - "+ PropertyUtils.getValue("mainFrame.about.line1",PropertyUtils.SYSTEM_PATH) +
+						"\n - "+ PropertyUtils.getValue("mainFrame.about.line2",PropertyUtils.SYSTEM_PATH) +
+						"\n - "+ PropertyUtils.getValue("mainFrame.about.line3",PropertyUtils.SYSTEM_PATH) +
 						"\n");
 			}
 		});

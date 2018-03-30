@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class NPIconFactory extends RawCacheRoot<NinePatch> {
 
-	private final static String IMAGE_PATH = "fixtip/imgs/np";
+	private final static String IMAGE_PATH = "/fixtip/imgs/np";
 	private final static String IMAGE_NAME9 = "/fixtip_bg.9.png";
 
 	private static NPIconFactory instance = null;

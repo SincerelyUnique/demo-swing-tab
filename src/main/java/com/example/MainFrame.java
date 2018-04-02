@@ -61,10 +61,10 @@ public class MainFrame extends JFrame {
 	private JMenuBar createMenuBar() {
 
 		// 菜单栏MenuDemo1
-		JMenu fileMenu = new JMenu("MenuDemo1");
-		JMenuItem openMenuItem = new JMenuItem("Menu item 1");
-		JMenuItem saveMenuItem = new JMenuItem("Menu item 2");
-		JMenuItem exitMenuItem = new JMenuItem("Menu item 3");
+		JMenu fileMenu = new JMenu("File");
+		JMenuItem openMenuItem = new JMenuItem("Open");
+		JMenuItem saveMenuItem = new JMenuItem("Save");
+		JMenuItem exitMenuItem = new JMenuItem("Close");
 		fileMenu.add(openMenuItem);
 		saveMenuItem.setEnabled(false);
 		fileMenu.add(saveMenuItem);
@@ -72,17 +72,15 @@ public class MainFrame extends JFrame {
 		fileMenu.add(exitMenuItem);
 
 		// 菜单栏MenuDemo2
-		JMenu fileMenu2 = new JMenu("MenuDemo2");
-		fileMenu2.add(new JMenuItem("Menu item 1"));
-		fileMenu2.add(new JMenuItem("Menu item 2"));
+		JMenu fileMenu2 = new JMenu("Options");
+		fileMenu2.add(new JMenuItem("Option1"));
+		fileMenu2.add(new JMenuItem("Option2"));
 		fileMenu2.addSeparator();
-		fileMenu2.add(new JMenuItem("Menu item 3"));
-		fileMenu2.add(new JMenuItem("Menu item 4"));
+		fileMenu2.add(new JMenuItem("Option3"));
+		fileMenu2.add(new JMenuItem("Option4"));
 		fileMenu2.addSeparator();
-		fileMenu2.add(new JMenuItem("Menu item 5"));
-		fileMenu2.add(new JMenuItem("Menu item 6"));
-		fileMenu2.add(new JMenuItem("Menu item 7"));
-		fileMenu2.add(new JMenuItem("Menu item 8"));
+		fileMenu2.add(new JMenuItem("Option5"));
+		fileMenu2.add(new JMenuItem("Option6"));
 
 		JMenu aboutMenu = new JMenu(PropertyUtils.
 				getValue("mainFrame.about",PropertyUtils.SYSTEM_PATH));
